@@ -3,6 +3,7 @@ import "./globals.css";
 import { QueryProvider } from "../components/providers/react-query";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { Toaster } from "@/components/ui/toaster";
+import Layout from "@/components/layout";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -26,7 +27,8 @@ export default function RootLayout({
         >
           <QueryProvider>
             <Toaster />
-            {children}
+            <Layout children={children}>
+            </Layout>
           </QueryProvider>
         </ThemeProvider>
       </body>
